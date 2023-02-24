@@ -46,7 +46,7 @@ const Spacer = () => {
 //             </PopoverContent>
 //         </Popover>
 //     </Flex>
-<div style={{width:'500px'}}></div>
+<div style={{width:'540px'}}></div>
   )
 }
 

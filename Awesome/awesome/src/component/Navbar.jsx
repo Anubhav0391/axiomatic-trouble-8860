@@ -7,7 +7,8 @@ import search from '../Images/search.PNG'
 import '../styles/navbar.css'
 import React from 'react'
 import {HamburgerIcon,CloseIcon,SearchIcon } from '@chakra-ui/icons'
-import { Tag,Drawer,DrawerBody,DrawerOverlay,DrawerContent,useDisclosure,HStack,Input,IconButton} from '@chakra-ui/react';
+import { Tag,Drawer,DrawerBody,DrawerOverlay,DrawerContent,useDisclosure,HStack,Input,IconButton,Text} from '@chakra-ui/react';
+// import Product from './card';
 // import {SearchIcon} from @chakra-
 
 
@@ -15,7 +16,7 @@ const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <div>
+    <div >
         <nav style={{display:'flex',justifyContent:'space-between'}}>
       <div className="wrapper">
         <div className="logo"><img src={logo} alt=""/></div>
@@ -253,13 +254,12 @@ const Navbar = () => {
             </div>
           </li>
 
-          <li><a href="#" style={{color:'red'}}>OFFERS</a></li>
+          <li><a href="#" style={{color:'red'}}><Text bgGradient='linear(to-l, #7928CA, #FF0080)'
+  bgClip='text'>OFFERS</Text></a></li>
           {/* <hr/><hr/><hr/><hr/> */}
           <li><Spacer/></li>
           <li >
-            {/* <img className='icon' src={search} alt="" style={{width:'50px',margin:'15px'}}/>
-            <label style={{borderTop:'1px solid black'}} htmlFor="search" className="mobile-item">SEARCH</label> */}
-            <button colorScheme='blue' onClick={onOpen}>
+            <button color='blue' onClick={onOpen}>
             <img className='icon' src={search} alt="" style={{width:'60px',marginTop:'30px'}}/>
             <label style={{borderTop:'1px solid black'}} htmlFor="search" className="mobile-item">SEARCH</label>
             </button>
@@ -268,11 +268,12 @@ const Navbar = () => {
                 <DrawerContent h='70px'>
                 <DrawerBody >
                     <HStack>
-                    <Input variant='flushed' placeholder='Search brand, category or products' h={'54px'} fontSize='20px'/>
+                    <Input variant='unstyled' placeholder='Search brand, category or products' h={'54px'} fontSize='20px'/>
                     <IconButton
                     h={'54px'}
                     w={'69px'}
-                    colorScheme='green'
+                    bg='#8BC34A'
+                    color='white'
                     aria-label='Search database'
                     icon={<SearchIcon fontSize={'2xl'}/>}
                     />
