@@ -1,10 +1,10 @@
 # awesome : Clone of Limeroad
 <br>
 An individual project, made in the duration of 5 days.
+<br>
 <b>Created by -</b> 
-<ul>
-<li><a href="https://www.linkedin.com/in/anubhav-dixit-753b51223/">Anubhav Dixit</a></li>
-</ul>
+<a href="https://www.linkedin.com/in/anubhav-dixit-753b51223/">Anubhav Dixit</a></li>
+
 About Site - 
 LimeRoad is a revolutionary Online Shopping Website and Discovery Platform for Fashionable Men and Women · India's Most Stylish Online Shopping Site, Limeroad.
 <br>
