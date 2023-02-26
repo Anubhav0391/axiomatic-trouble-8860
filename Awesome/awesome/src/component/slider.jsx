@@ -50,7 +50,7 @@ export function Swipe () {
         }
       };
       return (
-        <div style={{paddingBottom:'40px'}}>
+        <div style={{paddingBottom:'40px' ,cursor:'pointer'}}>
           <Slider {...settings}>
           <Box>
             <VStack>

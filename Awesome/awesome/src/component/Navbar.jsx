@@ -5,30 +5,40 @@ import profile from '../Images/profile.PNG'
 import cart from '../Images/bag.PNG'
 import search from '../Images/search.PNG'
 import '../styles/navbar.css'
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {HamburgerIcon,CloseIcon,SearchIcon } from '@chakra-ui/icons'
 import { Tag,Drawer,DrawerBody,DrawerOverlay,DrawerContent,useDisclosure,HStack,Input,IconButton,Text} from '@chakra-ui/react';
-// import Product from './card';
-// import {SearchIcon} from @chakra-
+import { Link } from 'react-router-dom';
+import { Context } from '../Context/Context';
 
 
 const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const [ text,setText]=useState('');
+    const {Search}=useContext(Context);
+
+    function func(e){
+      
+        if(e.keyCode===13){
+            Search(e.target.value)
+        }
+      
+    }
 
   return (
     <div >
         <nav style={{display:'flex',justifyContent:'space-between'}}>
       <div className="wrapper">
-        <div className="logo"><img src={logo} alt=""/></div>
+        <div className="logo"><Link to="/"><img src={logo} alt=""/></Link></div>
         <input type="radio" name="slider" id="menu-btn"/>
         
         <input type="radio" name="slider" id="close-btn"/>
         <ul className="nav-links">
-          <label htmlFor="close-btn" className="btn close-btn"><i className="fas fa-times"></i><CloseIcon/></label>
+          <label htmlFor="close-btn" className="btn close-btn"><i className="fas fa-times"></i></label>
           <li>
-            <a href="#" className="desktop-item">WOMEN</a>
+            <Link><a href="#" className="desktop-item">WOMEN</a>
             <input type="checkbox" id="showMega"/>
-            <label htmlFor="showMega" className="mobile-item">WOMEN</label>
+            <label htmlFor="showMega" className="mobile-item">WOMEN</label></Link>
             <div className="mega-box">
               <div className="content">
               <div className="row">
@@ -102,9 +112,9 @@ const Navbar = () => {
             </div>
           </li>
           <li>
-            <a href="#" className="desktop-item">MEN</a>
+            <Link to='/mens'><a href="#" className="desktop-item">MEN</a></Link>
             <input type="checkbox" id="showMega"/>
-            <label htmlFor="showMega" className="mobile-item">MEN</label>
+            <label htmlFor="showMega" className="mobile-item"><Link to='/mens'>MEN</Link></label>
             <div className="mega-box">
               <div className="content">
               <div className="row">
@@ -178,9 +188,9 @@ const Navbar = () => {
             </div>
           </li>
           <li>
-            <a href="#" className="desktop-item">KIDS</a>
+            <Link><a href="#" className="desktop-item" style={{marginRight:'23px'}}>KIDS</a>
             <input type="checkbox" id="showMega"/>
-            <label htmlFor="showMega" className="mobile-item">KIDS</label>
+            <label htmlFor="showMega" className="mobile-item">KIDS</label></Link>
             <div className="mega-box">
               <div className="content">
               <div className="row">
@@ -254,22 +264,24 @@ const Navbar = () => {
             </div>
           </li>
 
-          <li><a href="#" style={{color:'red'}}><Text bgGradient='linear(to-l, #7928CA, #FF0080)'
-  bgClip='text'>OFFERS</Text></a></li>
-          {/* <hr/><hr/><hr/><hr/> */}
+          <li><Link><Text fontWeight={600} fontSize={19} cursor='pointer' bgGradient='linear(to-l, #7928CA, #FF0080)'
+  bgClip='text'marginLeft={5}>OFFERS</Text></Link></li>
           <li><Spacer/></li>
           <li >
             <button color='blue' onClick={onOpen}>
             <img className='icon' src={search} alt="" style={{width:'60px',marginTop:'30px'}}/>
-            <label style={{borderTop:'1px solid black'}} htmlFor="search" className="mobile-item">SEARCH</label>
+            <label style={{borderTop:'1px solid black', marginLeft:'20px'}} htmlFor="search" className="mobile-item">SEARCH</label>
             </button>
             <Drawer placement={'top'} onClose={onClose} isOpen={isOpen}>
                 <DrawerOverlay />
                 <DrawerContent h='70px'>
                 <DrawerBody >
                     <HStack>
-                    <Input variant='unstyled' placeholder='Search brand, category or products' h={'54px'} fontSize='20px'/>
+                    <Input value={text} onKeyUp={func} onChange={(e)=>
+                      setText(e.target.value)
+                      } variant='unstyled' placeholder='Search brand, category or products' h={'54px'} fontSize='20px'/>
                     <IconButton
+                    onClick={()=>Search(text)}
                     h={'54px'}
                     w={'69px'}
                     bg='#8BC34A'
@@ -283,16 +295,17 @@ const Navbar = () => {
             </Drawer>
           </li>
           <li >
-          <img className='icon' src={cart} alt="" style={{width:'77px',margin:'17px'}}/>
-          <label htmlFor="search" className="mobile-item">CART</label>
+          <Link to ='/cart'><img className='icon' src={cart} alt="" style={{width:'77px',margin:'17px',cursor:'pointer'}}/>
+          <label htmlFor="search" className="mobile-item">CART</label></Link>
           </li>
           <li >
-          <img className='icon' src={profile} alt="" style={{width:'60px',margin:'15px'}}/>
-          <label htmlFor="search" className="mobile-item">PROFILE</label>
+
+          <Link to ='/login'><img className='icon' src={profile} alt="" style={{width:'60px',margin:'15px' }}/>
+          <label htmlFor="search" className="mobile-item">PROFILE</label></Link>
           </li>
         </ul>
         
-        <label htmlFor="menu-btn" className="btn menu-btn"><i className="fas fa-bars"></i><HamburgerIcon/></label>
+        <label htmlFor="menu-btn" className="btn menu-btn"><i className="fas fa-bars"></i></label>
       </div>
     </nav>
     </div>

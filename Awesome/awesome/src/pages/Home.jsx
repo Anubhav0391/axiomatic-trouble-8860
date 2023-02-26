@@ -2,20 +2,20 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import HomeCard from '../component/HomeCard';
-import InfiniteScroll from 'react-infinite-scroll-component'
+// import InfiniteScroll from 'react-infinite-scroll-component'
 import PauseOnHover, { Swipe } from "../component/slider";
-import AvatarRow from "../component/Avatar";
+// import AvatarRow from "../component/Avatar";
 import axios from "axios";
 import { Center, SimpleGrid,Button,Container } from "@chakra-ui/react";
 
 
 const Home = () => {
 	const [data, setData] = useState([]);
-	const [limit, setLimit] = useState(6);
+	const [limit, setLimit] = useState(9);
 
-	const getData = () => {
+	const getData = (limit) => {
 		axios
-			.get(`http://localhost:8080/toMen?_limit=${limit}`)
+			.get(`https://unit-5backend.onrender.com/LandingMen?_limit=${limit}`)
 			.then((res) => {
 				setData(res.data);
 			});
@@ -24,7 +24,7 @@ const Home = () => {
 		
 		setTimeout(() => {
 			if(limit>50){
-				setLimit(6);
+				setLimit(9);
 			}
 			else{
 				setLimit((prev)=>prev+3)
@@ -32,7 +32,7 @@ const Home = () => {
 		}, 1500);
 	}
 	useEffect(() => {
-		getData();
+		getData(limit);
 	}, [limit]);
 	return (
 		<Container maxW='950px'>
@@ -41,7 +41,7 @@ const Home = () => {
 			<PauseOnHover/>
 			<Center>
 			
-			<SimpleGrid columns={[1,1,2,3,3,3]} spacing={[3,3,6,3,3,3]}>
+			<SimpleGrid columns={[1,1,2,3,3,3]} spacing={[3,3,6,3,3,3]} my={3}>
 				{data?.map((el) => {
 					return (
 						<HomeCard
