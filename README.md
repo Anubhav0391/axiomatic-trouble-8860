@@ -12,7 +12,7 @@ LimeRoad is a revolutionary Online Shopping Website and Discovery Platform for F
 <b>Tech-Stacks : </b> HTML | CSS | JavaScript | React | ChakraUI | Firebase | Json-Server
 <br>
 <hr>
-Deployed Link-
+Deployed Link-https://awesome-beta.vercel.app/
 <br>
 <hr>
 HomePage-<img src="">
