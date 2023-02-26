@@ -14,7 +14,7 @@ LimeRoad is a revolutionary Online Shopping Website and Discovery Platform for F
 <hr>
 Deployed Link-https://awesome-beta.vercel.app/
 <br>
-<hr>
+<!-- <hr> -->
 <!-- HomePage-<img src="">
 MensPage-<img src="">
 Individual Product Page-<img src="">
