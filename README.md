@@ -1,15 +1,18 @@
 # awesome : Clone of Limeroad
 <br>
-An individual project, made in the duration of 5 days.
+An individual project, made in the duration of 5 days. It is fully functional and responsive clone of limeroad.
 <br>
 <b>Created by -</b> 
 <a href="https://www.linkedin.com/in/anubhav-dixit-753b51223/">Anubhav Dixit</a></li>
 
 <b>About Site -</b> 
-LimeRoad is a revolutionary Online Shopping Website and Discovery Platform for Fashionable Men and Women · India's Most Stylish Online Shopping Site, Limeroad.
+LimeRoad is an indian online marketplace, based in Gurugram,Haryana. It is india's first women's social shopping platform. It deals in clothing and accessories for women, men and kids.
 <br>
 <hr>
-<b>Tech-Stacks : </b> HTML | CSS | JavaScript | React | ChakraUI | Firebase | Json-Server
+<b>Tech-Stacks : </b>
+<ul>
+  <li>HTML</li><li>CSS</li><li>JavaScript</li><li>ReactJs</li><li>ChakraUI</li><li>Firebase</li><li>JSON Server</li>
+</ul>
 <br>
 <hr>
 <b>Deployed Link-</b>https://awesome-beta.vercel.app/
