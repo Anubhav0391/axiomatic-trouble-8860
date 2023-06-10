@@ -11,7 +11,7 @@ LimeRoad is an indian online marketplace, based in Gurugram,Haryana. It is india
 <hr>
 <b>Tech-Stacks : </b>
 <ul>
-  <li>HTML</li><li>CSS</li><li>JavaScript</li><li>ReactJs</li><li>ChakraUI</li><li>Firebase</li><li>JSON Server</li>
+  <li>HTML</li><li>CSS</li><li>JavaScript</li><li>ReactJs</li><li>ChakraUI</li><li>JSON Server</li>
 </ul>
 <br>
 <hr>
